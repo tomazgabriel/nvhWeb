@@ -1,0 +1,126 @@
+:root
+{
+  --primary-color: #1786d7;
+  --secondary-color: #ffff;
+  --ornament-color: #fdbf00;
+}
+
+body
+{
+  background-color: var(--primary-color);
+}
+
+.header
+{
+  grid-area:header; font-size: 20px; background-color: var(--secondary-color); border-radius: 15px;}
+.headerMenu{border-radius: inherit;}
+.media{grid-area:media; padding:10px; font-size:60px; background-color:var(--primary-color);}
+.navbar{grid-area:navbar; padding:10px; font-size:13px; background-color: transparent;overflow: hidden;}
+.navbar a
+{
+  float:left;
+  font-size: 20px;
+  color:var(--ornament-color);
+  text-align: center;
+  padding:14px 16px;
+  text-decoration: none;
+}
+.main{grid-area:main; padding-bottom:100%; font-size:30px; background-color: var(--secondary-color);border-radius: 15px;}
+
+.grid-container
+{
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'media media media media media media'
+    'navbar navbar navbar navbar navbar navbar'
+    'main main main main main main'
+  ;
+  gap:10px;
+  padding: 10px;
+}
+
+ul
+{
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+li
+{
+  float:left;
+}
+li a 
+{
+  display: block;
+  color: var(--primary-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover
+{
+  background-color: var(--ornament-color);
+}
+
+.dropdown
+{
+  float:left;
+  overflow:hidden;
+}
+.dropdown .dropbtn
+{
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  color:var(--secondary-color);
+  padding: 14px 16px;
+  background-color: transparent;
+  font-family: inherit;
+  margin:0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--ornament-color);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: var(--primary-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--ornament-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+@media screen and (max-width: 480px)
+{
+  /* For mobile phones: */
+  .header
+  {
+    font-size:20px;
+  }
+}
